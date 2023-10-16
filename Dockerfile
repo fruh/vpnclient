@@ -16,6 +16,7 @@ RUN cd /tmp/openfortivpn && ./configure --prefix=/usr/local --sysconfdir=/etc
 RUN cd /tmp/openfortivpn && make
 RUN cd /tmp/openfortivpn && make install
 
+RUN apt-get update && apt-get install -y openvpn
 
 RUN echo "logoutput: stderr" > /etc/danted.conf
 RUN echo "internal: 0.0.0.0 port = 1080" >> /etc/danted.conf
